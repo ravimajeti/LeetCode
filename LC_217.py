@@ -4,11 +4,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        tracker_dict = {}
-        for index, num in enumerate(nums):
-            if num in tracker_dict:
+        hashset = set()
+        for num in nums:
+            if num in hashset:
                 return True
-            tracker_dict[num] = index
+            hashset.add(num)
         return False
     
     def containsDuplicate_usingSets(self, nums):
